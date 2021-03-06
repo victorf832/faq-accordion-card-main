@@ -1,101 +1,156 @@
-*{
+html {
+    font-size: 62.5%;
+}
+
+* {
     padding: 0rem;
     margin: 0rem;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: 400;
 }
-#container{
+
+.container {
+    display: grid;
+    align-items: center;
     width: 100%;
-    height: auto;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    background: linear-gradient(to top, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
-} 
-#container #contenido{
-    width: 70%;
+    height: 100vh;
+    background: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+
+.Card {
+    width: 68%;
     margin: 0px auto;
-    height: 30rem;
-    background-color:  white;
+    height: 80vh;
+    background-color: white;
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-radius: 1.5rem;
+}
 
-} 
-#container #contenido #svg{
+.img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.div {
+    width: 100%;
+    height: 100%;
+    position: relative;
     overflow: hidden;
 }
-#container #contenido #svg #fondo{
-    position: relative;
-    top: -15rem;
-    left: -25rem;
-    width: 50rem;
-    height: 50rem;
+
+.fondo {
+    transform: scale(1);
+    top: -30rem;
+    left: -57rem;
+    position: absolute;
 }
 
-/*#container-main{
-    margin:40px auto;
-    width:95%;
-    min-width:320px;
-    max-width:960px;
-}
- 
-#container-main h1{
-    font-size: 40px;
-    text-shadow:4px 4px 5px #16a085;
-}
- 
-.accordion-container {
-    width: 100%;
-    margin: 0 0 20px;
-    clear:both;
-}
- 
-.accordion-titulo {
-    position: relative;
-    display: block;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: 300;
-    background: #2c3e50;
-    color: #fff;
-    text-decoration: none;
-}
-.accordion-titulo.open {
-    background: #16a085;
-    color: #fff;
-}
-.accordion-titulo:hover {
-    background: #1abc9c;
-}
- 
-.accordion-titulo span.toggle-icon:before {
-    content:"+";
-}
- 
-.accordion-titulo.open span.toggle-icon:before {
-    content:"-";
-}
- 
-.accordion-titulo span.toggle-icon {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 38px;
-    font-weight:bold;
-}
- 
-.accordion-content {
+.fondo-mobile {
     display: none;
-    padding: 20px;
-    overflow: auto;
 }
- 
-.accordion-content p{
-    margin:0;
+
+.woman {
+    position: absolute;
+    left: -8rem;
+    top: 5rem;
+    z-index: 2;
 }
- 
-.accordion-content img {
-    display: block;
-    float: left;
-    margin: 0 15px 10px 0;
-    width: 50%;
-    height: auto;
-}*/
+
+.woman-mobile {
+    display: none;
+}
+
+.cuadro {
+    position: absolute;
+    top: 18rem;
+    left: -12rem;
+    z-index: 3;
+}
+
+
+/* info */
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.section {
+    width: 80%;
+    height: 80%;
+}
+
+
+/* acordeon */
+
+.accordion {
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.accordion-item {
+    color: hsl(237, 12%, 33%);
+    margin: 1rem 0rem;
+    border-radius: 0.5rem;
+}
+
+.accordion-item-header {
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 400ms linear;
+}
+
+.accordion-item-header:hover {
+    color: hsl(14, 88%, 65%);
+}
+
+.accordion-item-header::after {
+    content: url('./images/icon-arrow-down.svg');
+    position: absolute;
+    right: 1rem;
+}
+
+.accordion-item-header.active {
+    font-weight: 700;
+    color: hsl(238, 29%, 16%);
+}
+
+.accordion-item-header.active::after {
+    content: url('./images/icon-arrow-down.svg');
+}
+
+.accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    border-bottom: 0.1rem solid hsl(240, 5%, 91%);
+    transition: max-height 500ms linear;
+}
+
+.accordion-item-body-content {
+    padding: 1rem;
+    line-height: 1.5rem;
+    color: hsl(240, 6%, 50%);
+}
+
+.accordion-item-header.active+.accordion-item-body {
+    max-height: 40rem;
+}
+
+
